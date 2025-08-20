@@ -10,7 +10,7 @@ export default function LeaveResponsePage() {
   useEffect(() => {
     const fetchResponses = async () => {
       try {
-        const res = await fetch("http://localhost:8000/leave/review", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/leave/review`, {
           method: "GET",
           credentials: "include", // if backend uses cookies
         });

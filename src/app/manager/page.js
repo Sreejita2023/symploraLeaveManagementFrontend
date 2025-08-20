@@ -13,7 +13,7 @@ export default function ManagerPage() {
   useEffect(() => {
     const fetchManager = async () => {
       try {
-        const res = await fetch("http://localhost:8000/viewEmployee", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/viewEmployee`, {
           method: "GET",
           credentials: "include", // include cookies
         });

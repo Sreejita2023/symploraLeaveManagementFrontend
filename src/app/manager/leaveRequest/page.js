@@ -10,7 +10,7 @@ export default function LeaveRequestPage() {
   useEffect(() => {
     const fetchRequests = async () => {
       try {
-        const res = await fetch("http://localhost:8000/leave/request", {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/leave/request`, {
           method: "GET",
           credentials: "include", // send cookies if needed
         });
@@ -32,7 +32,7 @@ export default function LeaveRequestPage() {
   const handleReview = async (leaveId, status) => {
     try {
       const res = await fetch(
-        `http://localhost:8000/request/review/${status}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/request/review/${status}`,
         {
           method: "POST",
           headers: {

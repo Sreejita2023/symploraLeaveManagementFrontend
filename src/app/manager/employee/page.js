@@ -19,7 +19,7 @@ export default function CreateEmployeePage() {
 
     try {
 
-      const res = await fetch("http://localhost:8000/employeeAdd", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/employeeAdd`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
